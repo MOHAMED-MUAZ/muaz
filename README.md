@@ -16,24 +16,6 @@ The system combines a **Gamma LLM backend** with a **modern React frontend** to 
 
 ---
 
-## 🏗️ Project Architecture
-
-Blind-Teacher/
-│
-├── backend/ # Gamma LLM backend
-│ ├── app.py # Main backend entry
-│ ├── llm/ # Gamma LLM integration
-│ ├── routes/ # API routes
-│ └── utils/ # Helper functions
-│
-├── frontend/ # React frontend
-│ ├── src/
-│ │ ├── components/ # Reusable UI components
-│ │ ├── pages/ # Application pages
-│ │ └── services/ # API services
-│ └── package.json
-│
----
 
 ## 🧠 Technologies Used
 
