@@ -87,8 +87,6 @@ Keyboard navigation support
 
 🌍 Multilingual support
 
-📱 Mobile-friendly UI
-
 ☁️ Cloud deployment
 
 🤝 Contributing
@@ -102,10 +100,6 @@ Create a new branch
 Commit your changes
 
 Open a Pull Request
-
-📄 License
-
-This project is licensed under the MIT License.
 
 👨‍💻 Author
 
