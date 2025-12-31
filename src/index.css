@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* High Contrast Accessible Theme - WCAG AAA */
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Royal Purple Primary - Strong Visibility */
+    --primary: 239 84% 67%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 239 84% 75%;
+
+    /* Deep Navy Secondary */
+    --secondary: 222 47% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 47% 18%;
+    --muted-foreground: 215 20% 75%;
+
+    /* Teal Accent for Success/Action */
+    --accent: 172 66% 50%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 25%;
+    --input: 222 30% 20%;
+    --ring: 239 84% 67%;
+
+    --radius: 1rem;
+
+    /* Accessibility Specific */
+    --focus-ring: 239 84% 67%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    
+    /* Voice Indicator Colors */
+    --voice-listening: 172 66% 50%;
+    --voice-speaking: 239 84% 67%;
+    --voice-idle: 222 30% 35%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(239 84% 67%) 0%, hsl(280 70% 50%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(222 47% 12%) 0%, hsl(222 47% 8%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(222 47% 6%) 0%, hsl(239 40% 12%) 50%, hsl(222 47% 6%) 100%);
+
+    /* Shadows for depth */
+    --shadow-glow: 0 0 60px hsl(239 84% 67% / 0.3);
+    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.4);
+    --shadow-button: 0 4px 16px hsl(239 84% 67% / 0.4);
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 239 84% 67%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 222 47% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 30% 20%;
+    --sidebar-ring: 239 84% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Large, readable text for accessibility */
+  html {
+    font-size: 18px;
+  }
+
+  /* Enhanced focus states for keyboard navigation */
+  *:focus-visible {
+    @apply outline-none ring-4 ring-primary ring-offset-2 ring-offset-background;
+    transition: box-shadow 0.2s ease;
+  }
+
+  /* Skip to main content link */
+  .skip-link {
+    @apply absolute -top-full left-4 z-50 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold;
+    transition: top 0.3s ease;
+  }
+
+  .skip-link:focus {
+    @apply top-4;
+  }
+}
+
+@layer components {
+  /* Voice indicator animation */
+  .voice-pulse {
+    animation: voicePulse 1.5s ease-in-out infinite;
+  }
+
+  .voice-wave {
+    animation: voiceWave 0.8s ease-in-out infinite;
+  }
+
+  /* Gentle fade animations */
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  /* High contrast button states */
+  .btn-accessible {
+    @apply relative overflow-hidden transition-all duration-300;
+    @apply focus-visible:ring-4 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
+  .btn-accessible::before {
+    content: '';
+    @apply absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-300;
+  }
+
+  .btn-accessible:hover::before,
+  .btn-accessible:focus::before {
+    @apply opacity-100;
+  }
+
+  /* Card with glow effect */
+  .card-glow {
+    @apply relative;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-glow::before {
+    content: '';
+    @apply absolute -inset-px rounded-[inherit] opacity-0 transition-opacity duration-500;
+    background: var(--gradient-primary);
+    z-index: -1;
+  }
+
+  .card-glow:hover::before,
+  .card-glow:focus-within::before {
+    @apply opacity-100;
+  }
+
+  /* Voice command card */
+  .voice-card {
+    @apply bg-card border-2 border-border rounded-2xl p-6;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:border-primary hover:shadow-lg;
+    @apply focus-within:border-primary focus-within:ring-4 focus-within:ring-primary/30;
+  }
+
+  /* Accessible icon button */
+  .icon-btn {
+    @apply p-4 rounded-full bg-secondary text-foreground;
+    @apply transition-all duration-300;
+    @apply hover:bg-primary hover:text-primary-foreground;
+    @apply focus-visible:bg-primary focus-visible:text-primary-foreground;
+  }
+}
+
+@layer utilities {
+  /* Screen reader only */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  /* High contrast text */
+  .text-high-contrast {
+    @apply text-foreground font-semibold tracking-wide;
+  }
+}
+
+@keyframes voicePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes voiceWave {
+  0%, 100% {
+    transform: scaleY(0.5);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
