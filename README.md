@@ -1,73 +1,134 @@
-# Welcome to your Lovable project
+# 👁️‍🗨️ Blind Teacher – AI Powered Learning Assistant
 
-## Project info
+Blind Teacher is an **AI-powered educational assistant** designed to support **visually impaired learners** through **voice-first interaction**, intelligent responses, and an accessible user experience.  
+The system combines a **Gamma LLM backend** with a **modern React frontend** to deliver an inclusive and interactive learning platform.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 🌟 Key Features
 
-There are several ways of editing your application.
+- 🎙️ **Voice-based learning support**
+- 🧠 **Gamma LLM-powered intelligent responses**
+- ♿ **Accessibility-focused design for blind users**
+- 📚 **Educational, teacher-like explanations**
+- 🌐 **Modern React frontend**
+- 🔗 **Scalable backend architecture**
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🏗️ Project Architecture
 
-Changes made via Lovable will be committed automatically to this repo.
+Blind-Teacher/
+│
+├── backend/ # Gamma LLM backend
+│ ├── app.py # Main backend entry
+│ ├── llm/ # Gamma LLM integration
+│ ├── routes/ # API routes
+│ └── utils/ # Helper functions
+│
+├── frontend/ # React frontend
+│ ├── src/
+│ │ ├── components/ # Reusable UI components
+│ │ ├── pages/ # Application pages
+│ │ └── services/ # API services
+│ └── package.json
+│
+---
 
-**Use your preferred IDE**
+## 🧠 Technologies Used
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Backend
+- **Python**
+- **Gamma LLM**
+- REST API architecture
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Frontend
+- **React.js**
+- JavaScript / JSX
+- Accessible UI principles
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🚀 Getting Started
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Prerequisites
+- Node.js (v16+)
+- Python (v3.9+)
+- Git
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### 🔧 Backend Setup
 
-**Edit a file directly in GitHub**
+```bash
+cd backend
+pip install -r requirements.txt
+python app.py
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+├── README.md
+└── requirements.txt
 
-**Use GitHub Codespaces**
+http://localhost:5000
+cd frontend
+npm install
+npm start
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+http://localhost:3000
 
-## What technologies are used for this project?
+🎯 Project Objective
 
-This project is built with:
+The goal of Blind Teacher is to:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Reduce educational barriers for visually impaired students
 
-## How can I deploy this project?
+Provide a voice-first AI teacher
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Deliver accurate, simple, and supportive explanations
 
-## Can I connect a custom domain to my Lovable project?
+Promote inclusive education using AI
 
-Yes, you can!
+🔒 Accessibility Focus
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Screen-reader friendly UI
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Voice input and output support
+
+High-contrast and simple layouts
+
+Keyboard navigation support
+
+📌 Future Enhancements
+
+🔊 Text-to-Speech (TTS) integration
+
+🗣️ Speech-to-Text (STT) improvements
+
+🌍 Multilingual support
+
+📱 Mobile-friendly UI
+
+☁️ Cloud deployment
+
+🤝 Contributing
+
+Contributions are welcome!
+
+Fork the repository
+
+Create a new branch
+
+Commit your changes
+
+Open a Pull Request
+
+📄 License
+
+This project is licensed under the MIT License.
+
+👨‍💻 Author
+
+Mohamed Muaz
+Engineering Student | AI & Accessibility Enthusiast
+
+GitHub: https://github.com/MOHAMED-MUAZ
+
